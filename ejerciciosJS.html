@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <h2> La fecha de hoy es: <span id="fecha"></span></h2>
+  <hr>
+  <p>Para obtener area de triangulo</p>
+  <label>Lado 1: </label>
+  <input id="lado1" placeholder="0 "></br>
+  <label>Lado 2: </label>
+  <input id="lado2" placeholder="0 "></br>
+  <label>Lado 3: </label>
+  <input id="lado3" placeholder="0 "></br>
+  <button type="button" onclick="areaTriangulo()"> Calcular </button>
+  <div>
+    <p>El area del tiangulo es: <span id="resultado"> </span></p>
+  </div>
+  <hr>
+  <p>Ingresa texto</p>
+  <input id="texto" type="text" placeholder="Ejemplo"></br>
+  <button type="button" onclick="reverse()"> Invertir </button>
+  <div>
+    <p>El texto invertido es: <span id="resultado2"> </span></p>
+  </div>
+  <hr>
+  <p>Ingresa texto</p>
+  <input id="texto2" type="text" placeholder="Ejemplo"></br>
+  <button type="button" onclick="reverse2()"> Invertir </button>
+  <div>
+    <p>El texto invertido sin reverse es: <span id="resultado3"> </span></p>
+  </div>
+  <hr>
+  <p>Ingresa cantidad a convertir</p>
+  <input id="numero" onkeyup="convertirGrados()" type="number" placeholder="0 ">
+  <select id="unidad" name="unidades" onchange="convertirGrados()">
+    <option value="1">ºF a ºC </option>
+    <option value="2">ºC a ºF</option>
+  </select>
+  <br>
+  <div>
+    <p>El resultado es: <span id="resultado4"> </span></p>
+
+    <span id="resultado"> </span>
+  </div>
+  <hr>
+  <p>Ingresa texto</p>
+  <input id="texto3" type="text" placeholder="Ejemplo mas largo"></br>
+  <button type="button" onclick="reverse2()"> Invertir </button>
+  <div>
+    <p>El texto con la primera mayuscula de cada palabra es: <span id="resultado5"> </span></p>
+  </div>
+  <hr>
+
+
+
+</body>
+<script src="./ejerciciosJS.js"></script>
+
+</html>
