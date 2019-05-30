@@ -53,8 +53,8 @@
   <p>Ingresa cantidad a convertir</p>
   <input id="numero" onkeyup="convertirGrados()" type="number" placeholder="0 ">
   <select id="unidad" name="unidades" onchange="convertirGrados()">
-    <option value="1">ºF a ºC </option>
-    <option value="2">ºC a ºF</option>
+    <option value="F">ºF a ºC </option>
+    <option value="C">ºC a ºF</option>
   </select>
   <br>
   <div>
@@ -101,6 +101,36 @@
     </p>
   </div>
   <hr>
+
+  <!-- Caracter repetido -->
+  <p>Ingresa texto</p>
+  <input id="textoInicial" type="text" placeholder="Ejemplo mas largo">
+  </br>
+  <p>Ingres caracter a Buscar</p>
+  <input id="caracterBuscar" type="text" placeholder="a">
+  </br>
+  <button type="button" onclick="caracterRepetido()"> Buscar coincidencias </button>
+  <div>
+    <p>La letra se repite:
+      <span id="resultadoRepetido"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- Valor repetido -->
+  <p>Ingresa valor numérico a Buscar</p>
+  <input id="valorBuscar" type="text" placeholder="a">
+  </br>
+  <p>Ingresa un arreglo</p>
+  </br>
+  <button type="button" onclick="valorRepetido()">Ingresar </button>
+  <div>
+    <p>El valor se repite:
+      <span id="resValorRepetido"> </span>
+    </p>
+  </div>
+  <hr>
+
+
 
 </body>
 <script src="./ejerciciosJS.js"></script>
