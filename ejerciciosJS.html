@@ -5,34 +5,51 @@
 </head>
 
 <body>
-  <h2> La fecha de hoy es: <span id="fecha"></span></h2>
+  <h2> La fecha de hoy es:
+    <span id="fecha"></span>
+  </h2>
   <hr>
+  <!-- Area triangulo -->
   <p>Para obtener area de triangulo</p>
   <label>Lado 1: </label>
-  <input id="lado1" placeholder="0 "></br>
+  <input id="lado1" placeholder="0">
+  </br>
   <label>Lado 2: </label>
-  <input id="lado2" placeholder="0 "></br>
+  <input id="lado2" placeholder="0">
+  </br>
   <label>Lado 3: </label>
-  <input id="lado3" placeholder="0 "></br>
+  <input id="lado3" placeholder="0">
+  </br>
   <button type="button" onclick="areaTriangulo()"> Calcular </button>
   <div>
-    <p>El area del tiangulo es: <span id="resultado"> </span></p>
+    <p>El area del tiangulo es:
+      <span id="resultado"> </span>
+    </p>
   </div>
   <hr>
+  <!-- Invertir texto con reverse -->
   <p>Ingresa texto</p>
-  <input id="texto" type="text" placeholder="Ejemplo"></br>
+  <input id="texto" type="text" placeholder="Ejemplo">
+  </br>
   <button type="button" onclick="reverse()"> Invertir </button>
   <div>
-    <p>El texto invertido es: <span id="resultado2"> </span></p>
+    <p>El texto invertido es:
+      <span id="resultado2"> </span>
+    </p>
   </div>
   <hr>
+  <!-- Invertir texto SIN rever -->
   <p>Ingresa texto</p>
-  <input id="texto2" type="text" placeholder="Ejemplo"></br>
+  <input id="texto2" type="text" placeholder="Ejemplo">
+  </br>
   <button type="button" onclick="reverse2()"> Invertir </button>
   <div>
-    <p>El texto invertido sin reverse es: <span id="resultado3"> </span></p>
+    <p>El texto invertido sin reverse es:
+      <span id="resultado3"> </span>
+    </p>
   </div>
   <hr>
+  <!-- Conversor de unidades -->
   <p>Ingresa cantidad a convertir</p>
   <input id="numero" onkeyup="convertirGrados()" type="number" placeholder="0 ">
   <select id="unidad" name="unidades" onchange="convertirGrados()">
@@ -41,20 +58,49 @@
   </select>
   <br>
   <div>
-    <p>El resultado es: <span id="resultado4"> </span></p>
-
+    <p>El resultado es:
+      <span id="resultado4"> </span>
+    </p>
     <span id="resultado"> </span>
   </div>
   <hr>
+  <!-- Propiedad del objeto -->
+  <p>Ingrese nombre de la propiedad del objeto:</p>
+  <input id="propiedad" type="text" placeholder="ejemplo">
+  </br>
+  <p>El objeto es:
+    <span id="resultadoObjeto"></span>
+  </p>
+  <button type="button" onclick="objeto()">Ejecutar</button>
+  <hr>
+  <!-- Sumar valores -->
+  <button type="button" onclick="sumaValores()">Ejecuta sumaValores()</button>
+  <p> El resultado de la suma de los numeros es =
+    <span id="resultadoSumaValores"></span>
+  </p>
+  <hr>
+  <!-- Poner mayusculas a cada palabra -->
   <p>Ingresa texto</p>
-  <input id="texto3" type="text" placeholder="Ejemplo mas largo"></br>
-  <button type="button" onclick="reverse2()"> Invertir </button>
+  <input id="texto3" type="text" placeholder="Ejemplo mas largo">
+  </br>
+  <button type="button" onclick="primeraMayus()"> Poner Mayusculas </button>
   <div>
-    <p>El texto con la primera mayuscula de cada palabra es: <span id="resultado5"> </span></p>
+    <p>El texto con la primera mayuscula de cada palabra es:
+      <span id="resultado5"> </span>
+    </p>
   </div>
   <hr>
-
-
+  <!-- Revisar multiplos de 3 o 7 -->
+  <p>Ingresa número</p>
+  <input id="numeroMultiplo" type="number" placeholder="0">
+  </br>
+  <button type="button" onclick="multiplo()"> Revisar </button>
+  <div>
+    <p>¿El numero es multiplo de 3 o 7 ?
+      <span id="resultadoMultiplo"> </span>
+    </p>
+  </div>
+  <hr>
 
 </body>
 <script src="./ejerciciosJS.js"></script>

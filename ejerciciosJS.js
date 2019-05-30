@@ -74,10 +74,37 @@ function convertirGrados() {
 };
 
 // Crea un objeto que tenga una propiedad cuyo nombre es definido por el usuario. Su valor debe ser verdadero
+function objeto(){
+  var nombreDePropiedad = document.getElementById("propiedad").value;
+  var miObjeto = {}
+  miObjeto[nombreDePropiedad] = true
+  document.getElementById("resultadoObjeto").innerHTML = JSON.stringify(miObjeto);
+}
 
 // Realiza la suma de los valores que de el usuario hasta recibir un valor negativo
+function sumaValores(){
+  var numero = 0;
+  var total = 0;
+
+  while(numero >= 0){
+    total += parseFloat(numero);
+    numero = prompt("Dame numero a sumar: ");
+  }
+  document.getElementById("resultadoSumaValores").innerHTML = total;
+}
 
 // Convierte a mayúscula la primer letra de cada palabra en una cadena dada por el usuario
-function primerMayusc(){
-  
+function primeraMayus() {
+  var string2 = document.getElementById("texto3").value;
+  var texto = string2.split(" ")
+  for(var i =0; i<texto.length; i++){
+    texto[i] = texto[i][0].toUpperCase() + texto[i].slice(1)
+  }
+  var resultMayusc= texto.join(" ")
+  document.getElementById("resultado5").innerHTML = resultMayusc;
+}
+// Revisa si un número dado es múltiplo de 3 o de 7
+function multiplo(){
+  var numMultiplo = document.getElementById("numeroMultiplo").value;
+  //(21 % 3 == 0 || 21 % 7 == 0)
 }
