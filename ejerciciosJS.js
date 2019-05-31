@@ -134,8 +134,7 @@ function caracterRepetido(letra, texto) {
 }
 
 //Revisa cuantas veces se repite un valor dado en un arreglo
-
-function valorRepetido(valor, arr) {
+function valorRepetido() {
   var valor = document.getElementById("valorBuscar").value;
   var valores = 0;
   var arr = [];
@@ -152,13 +151,95 @@ function valorRepetido(valor, arr) {
   }
   document.getElementById("resValorRepetido").innerHTML = count;
 }
-// Divide un número de 3 dígitos en sus centenas, decenas y unidades
-// 103 -> 1 centena, 0 decenas, 3 unidades
-function numCentenas(cantidad) {
+// Divide un número de 3 dígitos en sus centenas, decenas y unidades 103 -> 1 centena, 0 decenas, 3 unidades
+function numCentenas() {
+  var cantidad = document.getElementById("cantidad").value;
   var num = cantidad.toString();
   var result = num[0] + ' centenas' + ', ' + num[1] + ' decenas' + ', ' + num[2] + ' unidades';
-  console.log(result);
+  document.getElementById("centenasDecenasUnidades").innerHTML = result;
 }
 
 // Regresa todos los caracteres que no sean letras de una cadena
+function noLetras() {
+  var string = document.getElementById("cadenaTexto").value;
+  var arr = [];
+  for (let i = 0; i < string.length; i++) {
+    if (!string[i].match(/[A-Za-z]/)) {
+      arr.push(string[i]);
+    }
+  } var resultadoSinLetras = (arr.join(''));
+  document.getElementById("sinLetras").innerHTML = resultadoSinLetras;
+}
 
+// Haz una función que lanza un error con el mensaje dado por el usuario
+// Extiende la función anterior para atrapar el error e imprimir su mensaje y stack
+
+// Suma los contenidos de un arreglo de números
+function sumaArreglo() {
+  var elementos = 0;
+  var arr = [];
+  while (elementos >= 0) {
+    arr.push(elementos);
+    elementos = prompt('Dame un valor numérico: ');
+  }
+  var total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += parseFloat(arr[i]);
+  }
+  document.getElementById("totalSuma").innerHTML = total;
+}
+
+// Regresa un arreglo nuevo con el cuadrado de cada valor del arreglo original
+function arrCuadrados() {
+  var elementos = null;
+  var arr = [];
+  while (elementos >= 0) {
+    if (elementos != null){
+      arr.push(elementos);
+    }
+    elementos = prompt('Dame un valor numérico: ');
+  }
+  var arr2 = [];
+  for (let i = 0; i < arr.length; i++) {
+    arr2.push(arr[i] * arr[i]);
+  } 
+  document.getElementById("arrCuadrados").innerHTML = JSON.stringify(arr2);
+}
+
+// Regresa que tipo de ángulo es el dado
+/*
+  Agudo: 0 a 90 grados
+  Recto: 90 grados
+  Obtuso: 90 a 180 grados
+  Llano: 180 grados
+*/
+function tipoAngulo() {
+  var grado = document.getElementById("grado").value;
+  if (grado >= 0 && grado < 90) {
+    var angulo = 'Agudo';
+  } else if (grado == 90) {
+    angulo = 'Recto';
+  } else if (grado > 90 && angulo < 180) {
+    angulo = 'Obtuso';
+  } else if (grado == 180) {
+    angulo = 'Llano';
+  } else {
+    angulo = 'Ingresa una medida correcta';
+  }
+  document.getElementById("angulo").innerHTML = angulo;
+}
+
+// Regresa un arreglo nuevo sin los valores repetidos de un arreglo original
+function sinRepetidos() {
+  var elementos = null;
+  var arreglo = [];
+  while (elementos >= 0) {
+    if (elementos != null){
+      arreglo.push(elementos);
+    }
+    elementos = prompt('Dame un valor numérico: ');
+  }
+  elSet = new Set(arreglo);
+  var resultadoSinRepetir = JSON.stringify( Array.from(elSet));
+  document.getElementById("resultadoSinRepetir").innerHTML = resultadoSinRepetir;
+}

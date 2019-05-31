@@ -117,8 +117,8 @@
   </div>
   <hr>
   <!-- Valor repetido -->
-  <p>Ingresa valor numérico a Buscar</p>
-  <input id="valorBuscar" type="text" placeholder="a">
+  <p>Ingresa valor numérico a Buscar en el arreglo</p>
+  <input id="valorBuscar" type="text" placeholder="12">
   </br>
   <p>Ingresa un arreglo</p>
   </br>
@@ -129,7 +129,66 @@
     </p>
   </div>
   <hr>
-
+  <!-- Numero tres digitos -->
+  <p>Ingresa valor numérico de tres digitos</p>
+  <input id="cantidad" type="number" placeholder="358">
+  </br>
+  <button type="button" onclick="numCentenas()">Ingresar </button>
+  <div>
+    <p>El resultado es:
+      <span id="centenasDecenasUnidades"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- Texto sin letras -->
+  <p>Ingresa texto</p>
+  <input id="cadenaTexto" type="text" placeholder="Ejemplo 123">
+  </br>
+  <button type="button" onclick="noLetras()"> Ejecutar </button>
+  <div>
+    <p>La cadena sin letras es:
+      <span id="sinLetras"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- Suma Arreglo -->
+  <p>Ingresa numeros a sumar</p>
+  <button type="button" onclick="sumaArreglo()"> Ingresar y sumar </button>
+  <div>
+    <p>La suma es:
+      <span id="totalSuma"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- Arreglo cuadrados -->
+  <p>Ingresa numeros para devolver arreglo con sus cuadrados</p>
+  <button type="button" onclick="arrCuadrados()"> Ingresar </button>
+  <div>
+    <p>La suma es:
+      <span id="arrCuadrados"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- Tipo ángulo -->
+  <p>Ingresa medida de angulo</p>
+  <input id="grado" type="number" placeholder="90">
+  </br>
+  <button type="button" onclick="tipoAngulo()"> Ejecutar </button>
+  <div>
+    <p>El tipo de angulo es:
+      <span id="angulo"> </span>
+    </p>
+  </div>
+  <hr>
+ <!-- Arreglo con no repetidos -->
+ <p>Ingresa valores del arreglo</p>
+ <button type="button" onclick="sinRepetidos()"> Ejecutar </button>
+ <div>
+   <p>El arreglo sin repetidos es:
+     <span id="resultadoSinRepetir"> </span>
+   </p>
+ </div>
+ <hr>
 
 
 </body>
