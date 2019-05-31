@@ -194,7 +194,7 @@ function arrCuadrados() {
   var elementos = null;
   var arr = [];
   while (elementos >= 0) {
-    if (elementos != null){
+    if (elementos != null) {
       arr.push(elementos);
     }
     elementos = prompt('Dame un valor numérico: ');
@@ -202,7 +202,7 @@ function arrCuadrados() {
   var arr2 = [];
   for (let i = 0; i < arr.length; i++) {
     arr2.push(arr[i] * arr[i]);
-  } 
+  }
   document.getElementById("arrCuadrados").innerHTML = JSON.stringify(arr2);
 }
 
@@ -234,12 +234,12 @@ function sinRepetidos() {
   var elementos = null;
   var arreglo = [];
   while (elementos >= 0) {
-    if (elementos != null){
+    if (elementos != null) {
       arreglo.push(elementos);
     }
     elementos = prompt('Dame un valor numérico: ');
   }
   elSet = new Set(arreglo);
-  var resultadoSinRepetir = JSON.stringify( Array.from(elSet));
+  var resultadoSinRepetir = JSON.stringify(Array.from(elSet));
   document.getElementById("resultadoSinRepetir").innerHTML = resultadoSinRepetir;
 }
