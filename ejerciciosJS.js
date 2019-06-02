@@ -353,7 +353,7 @@ function compartidos() {
 
 // Valida que una cadena dada no tenga espacios en blanco
 function tieneEspacios() {
-  let texto = document.getElementById("textoConEspacios").value;
+  let texto = document.getElementById("textoConEspacios").value; document.getElementById("textoConEspacios").value;
   if (texto.split(" ").length > 1) {
     document.getElementById("espaciosVacios").innerHTML = 'Tiene espacios vacios';
   } else {
@@ -362,8 +362,41 @@ function tieneEspacios() {
 }
 
 // Dada una cadena, determina su valor de scrabble
+/*
+  1: E, A, I, O, N, R, T, L, S, U
+  2: D, G
+  3: B, C, M, P
+  4: F, H, V, W, Y
+  5: K
+  8: J, X
+  10: Q, Z
+*/
+function valorPalabra() {
+  let str = document.getElementById("palabraScrabble").value;
+  let letrasAbc = { A: 1, B: 3, C: 3, D: 2, E: 1, F: 4, G: 2, H: 4, I: 1, J: 8, K: 5, L: 1, M: 3, N: 1, O: 1, P: 3, Q: 10, R: 1, S: 1, T: 1, U: 1, V: 4, W: 4, X: 8, Y: 4, Z: 10 }
+  var puntos = 0;
+  let palabra = str.toUpperCase();
+  console.log(palabra);
+  for (i in palabra) {
+    let letra = palabra[i];
+    puntos += letrasAbc[letra];
+  }
+  document.getElementById("puntos").innerHTML = puntos;
 
+}
 
-
+// Determina si una cadena dada por el usuario es un acrónimo
+// Implementa una lista ligada
+// Implementa una lista doblemente ligada
+// Obten el Máximo común divisor de dos números dados
+function mcd() {
+  let num1= parseInt(document.getElementById("num1mcd").value);
+  let num2= parseInt(document.getElementById("num2mcd").value);
+  if (num2) {
+    document.getElementById("mcd").innerHTML= (num2, num1 % num2);
+  } else {
+    document.getElementById("mcd").innerHTML= Math.abs(num1);
+  }
+}
 
 
