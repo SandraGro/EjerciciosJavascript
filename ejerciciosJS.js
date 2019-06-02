@@ -172,7 +172,22 @@ function noLetras() {
 }
 
 // Haz una función que lanza un error con el mensaje dado por el usuario
+function usuarioError() {
+  var textoError = document.getElementById("textoError").value;
+  throw new Error(textoError);
+}
+
 // Extiende la función anterior para atrapar el error e imprimir su mensaje y stack
+
+function atrapaError() {
+  try {
+    usuarioError()
+  } catch (err) {
+    document.getElementById('error').innerHTML = err;
+    document.getElementById('errorStack').innerHTML = err.stack;
+    console.log(err.stack);
+  }
+}
 
 // Suma los contenidos de un arreglo de números
 function sumaArreglo() {
@@ -243,3 +258,112 @@ function sinRepetidos() {
   var resultadoSinRepetir = JSON.stringify(Array.from(elSet));
   document.getElementById("resultadoSinRepetir").innerHTML = resultadoSinRepetir;
 }
+
+// Quita los valores repetidos de un arreglo (sin usar otro arreglo)
+function sinRepetidos2() {
+  var elementos = null;
+  var arreglo = [];
+  while (elementos >= 0) {
+    if (elementos != null) {
+      arreglo.push(elementos);
+    }
+    elementos = prompt('Dame un valor numérico: ');
+
+    for (var i in arreglo) {
+      for (var j in arreglo) {
+        if (arreglo[i] == arreglo[j] && i != j) {
+          j++;
+          arreglo.splice(i, 1);
+        }
+      }
+    }
+  }
+  document.getElementById("resultadoSinRepetir2").innerHTML = arreglo;
+}
+
+// Convierte un número binario dado por el usuario a decimal
+function binario_a_decimal() {
+  var num = document.getElementById("numeroBinario").value;
+  document.getElementById("binarioDecimal").innerHTML = parseInt(num, 2);
+}
+
+// Convierte un número decimal dado por el usuario a binario, octal y hexadecimal (bases 2, 8 y 16)
+function decimal_a_binario(num) {
+  return num.toString(2);
+}
+
+function decimal_a_hex(num) {
+  return num.toString(16);
+}
+
+function decimal_a_octal(num) {
+  return num.toString(8);
+}
+
+
+function procesaFunciones() {
+  let numeroDecimal = parseInt(document.getElementById("numeroDecimal").value);
+  let unidades = document.getElementById("unidades").value;
+  if (numeroDecimal.length == 0) {
+    //alert ("Ingresa un numero") ;
+    return 0;
+  }
+
+  switch (unidades) {
+    case "binario":
+      document.getElementById("resultadoConversion").innerHTML = decimal_a_binario(numeroDecimal);
+      break;
+
+    case "octal":
+      document.getElementById("resultadoConversion").innerHTML = decimal_a_octal(numeroDecimal);
+      break;
+
+    case "hexa":
+      document.getElementById("resultadoConversion").innerHTML = decimal_a_hex(numeroDecimal);
+      break;
+  }
+};
+
+// Regresa la cantidad de valores que comparten dos arreglos diferentes
+
+function compartidos() {
+  var valores = null;
+  var arr1 = [];
+  var arr2 = [];
+
+  while (valores >= 0) {
+    if (valores != null)
+      arr1.push(valores);
+    valores = prompt('Dame un valor numérico del arreglo 1: ');
+  }
+
+  valores = null;
+  while (valores >= 0) {
+    console.log(valores);
+    if (valores != null)
+      arr2.push(valores);
+    valores = prompt('Dame un valor numérico del arreglo 2: ');
+  }
+
+  var respuesta = arr1.filter(function (valor) {
+    return arr2.includes(valor);
+  });
+  document.getElementById("valoresRepetidos").innerHTML = JSON.stringify(respuesta);
+}
+
+// Valida que una cadena dada no tenga espacios en blanco
+function tieneEspacios() {
+  let texto = document.getElementById("textoConEspacios").value;
+  if (texto.split(" ").length > 1) {
+    document.getElementById("espaciosVacios").innerHTML = 'Tiene espacios vacios';
+  } else {
+    document.getElementById("espaciosVacios").innerHTML = 'No tiene espacios vacios';
+  }
+}
+
+// Dada una cadena, determina su valor de scrabble
+
+
+
+
+

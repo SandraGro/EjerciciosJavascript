@@ -61,7 +61,6 @@
     <p>El resultado es:
       <span id="resultado4"> </span>
     </p>
-    <span id="resultado"> </span>
   </div>
   <hr>
   <!-- Propiedad del objeto -->
@@ -151,6 +150,18 @@
     </p>
   </div>
   <hr>
+  <!-- Texto Error-->
+  <p>Ingresa mensaje para error </p>
+  <input id="textoError" type="text" placeholder="Mensaje de error">
+  <button type="button" onclick="usuarioError()">Ejecutar</button>
+  <hr>
+  <button type="submit" onclick="atrapaError()"> Ejecutar </button>
+  </br>
+  </br>
+  <span id="error"> </span>
+  <p> Stack: </p>
+  <span id="errorStack"> </span>
+  <hr>
   <!-- Suma Arreglo -->
   <p>Ingresa numeros a sumar</p>
   <button type="button" onclick="sumaArreglo()"> Ingresar y sumar </button>
@@ -180,16 +191,69 @@
     </p>
   </div>
   <hr>
- <!-- Arreglo con no repetidos -->
- <p>Ingresa valores del arreglo</p>
- <button type="button" onclick="sinRepetidos()"> Ejecutar </button>
- <div>
-   <p>El arreglo sin repetidos es:
-     <span id="resultadoSinRepetir"> </span>
-   </p>
- </div>
- <hr>
-
+  <!-- Arreglo nuevo con no repetidos -->
+  <p>Ingresa valores del arreglo</p>
+  <button type="button" onclick="sinRepetidos()"> Ejecutar </button>
+  <div>
+    <p>El nuevo arreglo sin repetidos es:
+      <span id="resultadoSinRepetir"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- Arreglo con no repetidos -->
+  <p>Ingresa valores del arreglo</p>
+  <button type="button" onclick="sinRepetidos2()"> Ejecutar </button>
+  <div>
+    <p>El arreglo sin repetidos es:
+      <span id="resultadoSinRepetir2"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- De binario a decimal -->
+  <p>Ingresa numero binario</p>
+  <input id="numeroBinario" type="number" placeholder="1010">
+  </br>
+  <button type="button" onclick="binario_a_decimal()"> Ejecutar </button>
+  <div>
+    <p>El decimal es:
+      <span id="binarioDecimal"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- binario, octal y hexadecimal -->
+  <p>Ingresa numero decimal</p>
+  <input id="numeroDecimal" onkeyup="procesaFunciones()" type="number" placeholder="123">
+  </br>
+  <select id="unidades" name="unidades" onchange="procesaFunciones()">
+    <option value="binario">Binario </option>
+    <option value="octal">Octal</option>
+    <option value="hexa">Hexadecimal</option>
+  </select>
+  <div>
+    <p>El resultado es:
+      <span id="resultadoConversion"> </span>
+    </p>
+  </div>
+  <br>
+  <hr>
+  <!-- Valores compartidos -->
+  <p>Ingresa arreglos para ver que valores coinciden</p>
+  </br>
+  <button type="button" onclick="compartidos()">Ingresar </button>
+  </br>
+  <div>
+    <p>Los valores que coinciden son:
+      <span id="valoresRepetidos"> </span>
+    </p>
+  </div>
+  <hr>
+  <!-- No tiene espacios en blanco -->
+  <p>Ingresa texto para validad que no tenga espacios </p>
+  <input id="textoConEspacios" type="text" placeholder="S a n d r a ">
+  <button type="button" onclick="tieneEspacios()">Validar espacios </button>
+  </br>
+  <p id="espaciosVacios"></p>
+  <hr>
 
 </body>
 <script src="./ejerciciosJS.js"></script>
