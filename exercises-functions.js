@@ -205,7 +205,6 @@ sandra.setApellido('Guerrero Flores');
 console.log(sandra.nombre, sandra.edad, sandra.apellido);
 console.log(sandra.describe());
 
-
 /*
   Crea una clase Product que recibe un nombre y un valor
   tiene un método (value) que regresa su valor con iva (x1.16)
@@ -218,3 +217,57 @@ console.log(sandra.describe());
   su método value regresa el valor sin iva
   Esta clase debería poder usarse en Cart
 */
+
+
+class Product {
+  constructor(nombre, valor) {
+    this.nombre = nombre;
+    this.valor = valor;
+  }
+
+  value() {
+    return this.valor * 1.16;
+  }
+}
+
+class Cart {
+  constructor() {
+    this.lista = []
+  }
+
+  add(product) {
+    if (!(product instanceof Product)) {
+      throw new Error("El producto debe ser de tipo Product.");
+    }
+    this.lista.push(product);
+  }
+
+  total() {
+    var total = 0;
+    for (var i in this.lista) {
+      total += this.lista[i].value();
+    }
+    return total;
+  }
+}
+
+class Food extends Product {
+  constructor(nombre, valor) {
+    super(nombre, valor);
+    this.nombre = nombre;
+    this.valor = valor;
+  }
+  value() {
+    return this.valor;
+  }
+}
+
+let cart = new Cart();
+let producto_1 = new Product("jabon", 10)
+let producto_2 = new Product("shampoo", 38)
+cart.add(producto_1);
+cart.add(producto_2);
+console.log(cart.total())
+let producto_3 = new Food("Manzanas", 10)
+cart.add(producto_3);
+console.log(cart.total())
