@@ -10,16 +10,16 @@ En consola debería verse 2 1 3
 */
 
 function myFunction() {
-  setTimeout(function() { console.log(1); }, 3000);
-  setTimeout(function() { console.log(2); }, 1000);
-  setTimeout(function() { console.log(3); }, 4000);
+    setTimeout(function () { console.log(1); }, 3000);
+    setTimeout(function () { console.log(2); }, 1000);
+    setTimeout(function () { console.log(3); }, 4000);
 }
 myFunction();
 
 //Escribe un callback que recibe un argumento y lo imprime
 
 function saludar(nombre) {
-  console.log(`Hola ${nombre}`);
+    console.log(`Hola ${nombre}`);
 }
 
 saludar('Sandra');
@@ -27,13 +27,27 @@ saludar('Sandra');
 //Crea una función que recibe el callback anterior y lo ejecuta
 
 function procesaFuncion(myfun) {
-  var nombre = 'Sandra';
-  myfun(nombre);
+    var nombre = 'Sandra';
+    myfun(nombre);
 }
 procesaFuncion(saludar);
 
 //Crea una función que llama a un callback y usa el valor que regresa para llamar a otro. Después debe llamar a un tercer callback con el valor que regresa el segundo
 
-function funcion2(callback1) {
-
+function callback1(clb2) {
+    return 'Hola, ' + clb2(callback3);
 }
+function callback2(clb3) {
+    return 'Sandra. ' + clb3();
+}
+
+function callback3() {
+    return 'Buen día';
+}
+
+function funcion2(callback1, callback2) {
+    let respuestaCb1 = callback1(callback2);
+    return respuestaCb1;
+}
+
+funcion2(callback1, callback2);
