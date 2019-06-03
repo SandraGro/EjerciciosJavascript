@@ -24,7 +24,7 @@ function saludo(tipo, formal, casual) {
   if (tipo == 'formal') {
     return formal();
   } else if (tipo == 'casual') {
-    return 'Hola';
+    return casual();
   }
   return 'Dame un saludo válido';
 }
