@@ -34,20 +34,26 @@ procesaFuncion(saludar);
 
 //Crea una función que llama a un callback y usa el valor que regresa para llamar a otro. Después debe llamar a un tercer callback con el valor que regresa el segundo
 
-function callback1(clb2) {
-    return 'Hola, ' + clb2(callback3);
-}
-function callback2(clb3) {
-    return 'Sandra. ' + clb3();
-}
-
-function callback3() {
-    return 'Buen día';
+function visitarPag(url, callback) {
+    console.log('Visitando pagina')
+    let contenido = 'contenido de la pagina';
+    callback(contenido)
 }
 
-function funcion2(callback1, callback2) {
-    let respuestaCb1 = callback1(callback2);
-    return respuestaCb1;
+function extraerPalabrasClave(contenido, callback) {
+    console.log('extrayendo palabras clave');
+    let palabrasClave = 'palabras';
+
+    callback(palabrasClave);
 }
 
-funcion2(callback1, callback2);
+function guardarPalabrasClave(palabras) {
+    console.log('guardando palabras clave');
+}
+
+
+visitarPag("https://sandraalejandra.com", (content) => {
+    extraerPalabrasClave(content, (keywords) => {
+        guardarPalabrasClave(keywords);
+    })
+});
