@@ -30,7 +30,7 @@ window.onload = () => {
   // Selecciona los spans de div8, agrega el numero que son como contenido a cada una (1-6)
   const ej10 = document.querySelectorAll('#div8 .a-span');
   ej10.forEach((valor, i) => {
-    valor.innerText = (i + 1);
+    valor.innerText = i + 1;
   });
 
   // Agrega un listener de click al primer y ultimo span de div9
