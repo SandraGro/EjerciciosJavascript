@@ -30,14 +30,14 @@ window.onload = () => {
   // Selecciona los spans de div8, agrega el numero que son como contenido a cada una (1-6)
   const ej10 = document.querySelectorAll('#div8 .a-span');
   ej10.forEach((valor, i) => {
-    valor.innerText = i + 1;
+    valor.innerText = (i + 1);
   });
 
   // Agrega un listener de click al primer y ultimo span de div9
   const ej11 = document.querySelector('#div9 .a-span');
   const ej12 = document.querySelector('#div9 .a-span:last-of-type');
   ej11.addEventListener('click', () => console.log('Soy el primero'));
-  ej12.addEventListener('click', () => console.log('Soy el iltimo'));;
+  ej12.addEventListener('click', () => console.log('Soy el iltimo'));
 
   // Agrega un listener de click a los spans impares de div10 (1, 3, 5)
   const ej13 = document.querySelectorAll('#div10 .a-span:nth-of-type(odd)');
@@ -68,10 +68,10 @@ window.onload = () => {
    */
 
   const ej17 = document.querySelectorAll('#div14 input');
-  ej17[0].addEventListener('change', (event) => console.log(event.target.name));
-  ej17[1].addEventListener('blur', (event) => console.log(event.target.name));
-  ej17[2].addEventListener('change', (event) => console.log(event.target.name));
-  ej17[2].addEventListener('blur', (event) => console.log(event.target.name));
+  ej17[0].addEventListener('change', event => console.log(event.target.name));
+  ej17[1].addEventListener('blur', event => console.log(event.target.name));
+  ej17[2].addEventListener('change', event => console.log(event.target.name));
+  ej17[2].addEventListener('blur', event => console.log(event.target.name));
 
 
   /**
@@ -93,5 +93,4 @@ window.onload = () => {
 
   const ej19 = document.querySelector('#div16');
   ej19.addEventListener('scroll', () => console.log('I was scrolled'));
-  
 };
