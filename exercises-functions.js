@@ -15,6 +15,31 @@ getCandySupply(76, 1);
 
 // Crea una función que permita encadenar llamadas
 // a().a().a() ... etc
+class Texto {
+  constructor(texto) {
+    this.texto = texto;
+  }
+
+  mayusculas() {
+    this.texto = this.texto.toUpperCase()
+    return this;
+  }
+
+  separarPorPuntos() {
+    this.texto = this.texto.split("").join(".")
+    return this;
+  }
+
+  mostrar() {
+    return this.texto;
+  }
+
+}
+
+var instancia = new Texto("hAlA")
+instancia.mayusculas()
+  .separarPorPuntos()
+  .mostrar()
 
 // Crea una función que recibe un tipo (formal/casual) y dos funciones, una para un saludo casual (hola!) y otra para un saludo formal (buenos dias)
 // La función debe regresar el tipo de saludo que va a usarse
