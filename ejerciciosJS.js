@@ -385,17 +385,146 @@ function valorPalabra() {
 
 }
 
-// Determina si una cadena dada por el usuario es un acrónimo
+// Determina si una cadena dada por el usuario es un palindromo
+function palindromo(palabra) {
+  var str = palabra.split("")
+    .reverse().join("")
+    .toUpperCase()
+    .replace(/ /g, "");
+
+  if (str === palabra.toUpperCase().replace(/ /g, "")) {
+    console.log("Es un palindromo");
+  }
+  else {
+    console.log("No es un palindromo");
+  }
+}
+
 // Implementa una lista ligada
+class LinkedList {
+  constructor() {
+    this.head = null
+    this.current = null
+  }
+
+  add(valor) {
+    let nuevoNodo = new LinkedListNode(valor);
+    if (this.head == null) {
+      this.head = nuevoNodo
+      this.current = this.head
+    } else {
+      let nodoActual = this.head;
+      while (nodoActual.siguiente != null) {
+        nodoActual = nodoActual.siguiente;
+      }
+      nodoActual.siguiente = nuevoNodo;
+    }
+  }
+
+  next() {
+    if (this.current == null) {
+      return null;
+    }
+
+    this.current = this.current.siguiente;
+    if (this.current == null) {
+      return null;
+    }
+
+    return this.current.valor
+  }
+}
+
+class LinkedListNode {
+  constructor(valor) {
+    this.valor = valor
+    this.siguiente = null
+  }
+}
+
+let linkedList = new LinkedList()
+linkedList.add(10)
+linkedList.add(20)
+linkedList.add(30)
+
+console.log(linkedList.next()) // 20
+console.log(linkedList.next()) // 30
+console.log(linkedList.next()) // null
+console.log(linkedList.next()) // null
 // Implementa una lista doblemente ligada
+class DoubleLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.current = null;
+  }
+
+  add(valor) {
+    let nodoNuevo = new DoubleLinkedListNode(valor);
+    if (this.head == null) {
+      this.head = nodoNuevo;
+      this.tail = nodoNuevo;
+      this.current = nodoNuevo;
+    } else {
+      nodoNuevo.anterior = this.tail;
+      this.tail.siguiente = nodoNuevo;
+      this.tail = nodoNuevo
+    }
+  }
+
+  next() {
+    if (this.current == null) {
+      return null;
+    }
+
+    this.current = this.current.siguiente;
+    if (this.current == null) {
+      return null;
+    }
+
+    return this.current.valor
+  }
+
+  prev() {
+    if (this.current == null) {
+      return null;
+    }
+
+    this.current = this.current.anterior;
+    if (this.current == null) {
+      return null;
+    }
+
+    return this.current.valor
+  }
+}
+
+class DoubleLinkedListNode {
+  constructor(valor) {
+    this.valor = valor
+    this.siguiente = null
+    this.anterior = null
+  }
+}
+
+
+let doubleLinkedList = new DoubleLinkedList()
+doubleLinkedList.add(10)
+doubleLinkedList.add(20)
+doubleLinkedList.add(30)
+
+console.log(doubleLinkedList.next()) // 20
+console.log(doubleLinkedList.next()) // 30
+console.log(doubleLinkedList.prev()) // 20
+console.log(doubleLinkedList.prev()) // 10
 // Obten el Máximo común divisor de dos números dados
 function mcd() {
-  let num1= parseInt(document.getElementById("num1mcd").value);
-  let num2= parseInt(document.getElementById("num2mcd").value);
+  let num1 = parseInt(document.getElementById("num1mcd").value);
+  let num2 = parseInt(document.getElementById("num2mcd").value);
   if (num2) {
-    document.getElementById("mcd").innerHTML= (num2, num1 % num2);
+    document.getElementById("mcd").innerHTML = (num2, num1 % num2);
   } else {
-    document.getElementById("mcd").innerHTML= Math.abs(num1);
+    document.getElementById("mcd").innerHTML = Math.abs(num1);
   }
 }
 
